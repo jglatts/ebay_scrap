@@ -17,7 +17,7 @@
 #		Search for Products, and see when\how much they	
 #		sold for. 
 #
-#
+
 
 
 import time
@@ -28,8 +28,8 @@ from bs4 import BeautifulSoup
 
 def bayscrap():
 	""" Let's get some info from EBAY """
+	
 	active = True
-
 	while True:
 		try:
 			print('\nWhat Do You Want To View From Ebay?')
@@ -62,7 +62,7 @@ def bayscrap():
 
 
 def soldlistings(search_item):
-		""" Scrape EBAY for sold items of the search product. 
+		""" Scrap EBAY for sold items of the search product. 
 		This changes the url to find the sold listings.
 		New URL will be fed to requests\bs4 """
 
