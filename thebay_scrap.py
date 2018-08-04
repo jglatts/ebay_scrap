@@ -64,7 +64,7 @@ def bayscrap():
 def soldlistings(search_item):
 		""" Scrap EBAY for sold items of the search product. 
 		This changes the url to find the sold listings.
-		New URL will be fed to requests\bs4 """
+		New URL will be fed to requests\bs4.  """
 
 		print('\nDisplaying Sold Items For:' + ' ' + search_item.title() + '\n')
 		sold_url = 'https://www.ebay.com/sch/i.html?_from=R40&_nkw=' + search_item + '&_sacat=0&LH_Sold=1&_dmd=2'
@@ -78,4 +78,4 @@ def soldlistings(search_item):
 			print('\n' + sold.get_text())
 
 
-bayscrap()
+bayscrap() 
