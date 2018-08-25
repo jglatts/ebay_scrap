@@ -1,24 +1,10 @@
 #!/usr/bin/env python
 #
 #
-#	$$\                                                                                    
-#	$$ |                                                                                   
-#	$$$$$$$\   $$$$$$\  $$\   $$\          $$$$$$$\  $$$$$$$\  $$$$$$\  $$$$$$\   $$$$$$\  
-#	$$  __$$\  \____$$\ $$ |  $$ |$$$$$$\ $$  _____|$$  _____|$$  __$$\ \____$$\ $$  __$$\ 
-#	$$ |  $$ | $$$$$$$ |$$ |  $$ |\______|\$$$$$$\  $$ /      $$ |  \__|$$$$$$$ |$$ /  $$ |
-#	$$ |  $$ |$$  __$$ |$$ |  $$ |         \____$$\ $$ |      $$ |     $$  __$$ |$$ |  $$ |
-#	$$$$$$$  |\$$$$$$$ |\$$$$$$$ |        $$$$$$$  |\$$$$$$$\ $$ |     \$$$$$$$ |$$$$$$$  |
-#	\_______/  \_______| \____$$ |        \_______/  \_______|\__|      \_______|$$  ____/ 
-#			    $$\   $$ |                                               $$ |      
-#			    \$$$$$$  |                                               $$ |      			                                                   \__|    
+# This is a program for searching\scraping EBAY. 
+# Search for Products, and see when\how much they sold for. 
 #
 #
-#	        This is a program for searching\scraping EBAY. 
-#		Search for Products, and see when\how much they	
-#		sold for. 
-#
-
-
 
 import time
 import webbrowser
@@ -27,7 +13,7 @@ from bs4 import BeautifulSoup
 
 
 def bayscrap():
-	""" Let's get some info from EBAY """
+	""" Get some info from EBAY with requests and bs4. """
 	
 	active = True
 	while True:
