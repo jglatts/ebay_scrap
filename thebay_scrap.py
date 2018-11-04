@@ -7,7 +7,6 @@
 #
 
 import time
-import webbrowser
 import requests
 from bs4 import BeautifulSoup
 
@@ -32,7 +31,6 @@ def bayscrap():
 			for items in soup.find_all("div",{"class":"s-item__info clearfix"}):
 				print('\n' + items.get_text())
 
-			# should we open in browser?
 			print('\n View Sold Listings of This Product? ')
 			check = input()
 			if check == 'yes':
