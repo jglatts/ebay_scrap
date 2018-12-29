@@ -5,8 +5,6 @@
 # Search for Products, and see when\how much they sold for.
 #
 #
-
-
 import time
 import requests
 from bs4 import BeautifulSoup
@@ -15,7 +13,6 @@ from bs4 import BeautifulSoup
 def bayscrap():
     """ Get some info from EBAY with requests and bs4. """
 
-    active = True
     while True:
         try:
             print('\nWhat Do You Want To View From Ebay?')
@@ -31,7 +28,7 @@ def bayscrap():
             # Display findings
             soup = BeautifulSoup(plain_text, "html.parser")  # pass/parse the url with bs4
             for items in soup.find_all("div", {"class": "s-item__info clearfix"}):
-                # let's find those links!
+                # find the links
                 for links in items.find_all("a", href=True):
                     print('\n' + items.get_text())
                     print(links['href'])
@@ -39,7 +36,6 @@ def bayscrap():
             check = input()
             if check == 'yes':
                 soldlistings(search)
-                active = False  # Infinite Loop after EBAYscrap is complete
             else:
                 print('\nOK!\n')
                 return
@@ -64,7 +60,9 @@ def soldlistings(search_item):
     # Throw findings to bs4 then display
     sold_soup = BeautifulSoup(bs4_text, 'html.parser')
     for sold in sold_soup.find_all("li", {"class": "s-item"}):
-        print('\n' + sold.get_text())
+        for links in sold.find_all("a", href=True):
+            print('\n' + sold.get_text())
+            print(links['href'])
 
 
 bayscrap()
