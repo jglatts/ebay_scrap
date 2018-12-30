@@ -13,7 +13,7 @@ def bayscrap():
     """ Get some info from EBAY with requests and bs4. """
 
     check_words = ['yes', 'YES', 'Yes']
-    file = open("test.txt", "w")
+    #file = open("test.txt", "w") file to write the products to
 
     while True:
         try:
