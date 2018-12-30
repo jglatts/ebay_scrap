@@ -1,5 +1,6 @@
 # ebayscrap
-  Search Ebay for products, and see sold listings. Utilizes beautifulsoup and requests . 
+  Search Ebay for products, and see sold listings. 
+  Utilizes beautifulsoup and requests . 
 
 # Copy and Run
   Copy the thebay_scrap.py file onto your machine and run!
