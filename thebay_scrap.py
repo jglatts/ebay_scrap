@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 #
-#
+# Author: John Glatts
 # This is a program for searching\scraping EBAY.
 # Search for Products, and see when\how much they sold for.
 #
 #
-import time
 import requests
 from bs4 import BeautifulSoup
 
 
 def bayscrap():
     """ Get some info from EBAY with requests and bs4. """
+
+    check_words = ['yes', 'YES', 'Yes']
+    file = open("test.txt", "w")
 
     while True:
         try:
@@ -26,15 +28,16 @@ def bayscrap():
             plain_text = source_code.text
 
             # Display findings
-            soup = BeautifulSoup(plain_text, "html.parser")  # pass/parse the url with bs4
+            soup = BeautifulSoup(plain_text, "html.parser")  
             for items in soup.find_all("div", {"class": "s-item__info clearfix"}):
-                # find the links
+                # Find the links
                 for links in items.find_all("a", href=True):
-                    print('\n' + items.get_text())
-                    print(links['href'])
+                    pass    
+                print('\n' + items.get_text())
+                print(links['href'])
             print('\n\n View sold listings for %s?' % search.title())
             check = input()
-            if check == 'yes':
+            if check in check_words:
                 soldlistings(search)
             else:
                 print('\nOK!\n')
@@ -61,8 +64,9 @@ def soldlistings(search_item):
     sold_soup = BeautifulSoup(bs4_text, 'html.parser')
     for sold in sold_soup.find_all("li", {"class": "s-item"}):
         for links in sold.find_all("a", href=True):
-            print('\n' + sold.get_text())
-            print(links['href'])
+            pass
+        print('\n' + sold.get_text())
+        print(links['href'])
 
 
 bayscrap()
