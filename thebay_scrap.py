@@ -13,7 +13,6 @@ def bayscrap():
     """ Get some info from EBAY with requests and bs4. """
 
     check_words = ['yes', 'YES', 'Yes']
-    #file = open("test.txt", "w") file to write the products to
 
     while True:
         try:
@@ -30,7 +29,7 @@ def bayscrap():
             # Display findings
             soup = BeautifulSoup(plain_text, "html.parser")  
             for items in soup.find_all("div", {"class": "s-item__info clearfix"}):
-                # Find the links
+                # Find banging deals
                 for links in items.find_all("a", href=True):
                     pass    
                 print('\n' + items.get_text())
